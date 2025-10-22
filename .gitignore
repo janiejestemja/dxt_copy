@@ -1,0 +1,7 @@
+__pycache__/
+.venv
+.ipynb_checkpoints
+tests/samples_out/
+.pytest_cache/
+datex_tracker/tmp/
+notes.ipynb

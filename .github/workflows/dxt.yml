@@ -1,0 +1,29 @@
+name: dxt
+
+on:
+  workflow_dispatch:
+    branches:
+      - 'main'
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  Datex-tractor:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout own repo
+        uses: actions/checkout@v5
+
+      - name: Run datex_tractor
+        uses: unyt-org/datex-tractor@local
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          model_path: /cs/ai/dpsk/dpsk/llama.cpp/models/deepseek-llm-7b-chat.Q4_K_M.gguf
+          prompt_path: /cs/ai/dpsk/dpsk/system.txt
+          source_path: $HOME/cs/ai/dpsk/dpsk/.venv/bin/activate
