@@ -3,7 +3,7 @@ name: dxt
 on:
   workflow_dispatch:
     branches:
-      - 'main'
+      - "main"
 
 concurrency:
   group: ${{ github.workflow }}
@@ -24,6 +24,7 @@ jobs:
         uses: unyt-org/datex-tractor@local
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          model: "hrms"
           model_path: /cs/ai/dpsk/dpsk/llama.cpp/models/openhermes-2.5-mistral-7b.Q4_K_M.gguf
           prompt_path: /cs/ai/dpsk/dpsk/hermes.txt
           source_path: $HOME/cs/ai/dpsk/dpsk/.venv/bin/activate
