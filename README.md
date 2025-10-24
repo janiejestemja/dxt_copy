@@ -1,5 +1,7 @@
 # Developer Notes
 ---
+> Trying to implement LLM commentary on issues... [Link to example](https://github.com/janiejestemja/dxt_copy/issues/1)
+
 ### How to create issues
 ---
 *Is having to find problems to solve a problem?*
